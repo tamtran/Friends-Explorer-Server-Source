@@ -9,15 +9,6 @@ class UserLocationController < ApplicationController
     @successOrNot = @recordChecking.save
 
     @allLocation = CurrentUsersLocation.find(:all, :conditions => ["name NOT IN (?)", [@nameDisplay]])
-    render :inline => "<?xml version='1.0' encoding='ISO-8859-1'?>
-          <Location>
-            <% for location in @allLocation%>
-             <item>
-              <Name><%= location.name %> </Name>
-              <Long><%= location.long %> </Long>
-              <Lat><%= location.lat %> </Lat>
-             </item>
-          <% end %>
-          </Location>"
+    render :inline => "<% for location in @allLocation%><item><Name><%= location.name %></Name><Long><%= location.long %></Long><Lat><%= location.lat %></Lat></item><% end %>"
   end
 end
