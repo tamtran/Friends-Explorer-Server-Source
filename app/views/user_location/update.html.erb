@@ -1,3 +1,10 @@
-<h2>Name <%= @nameDisplay %> </h2>
-<h2>Longitude <%= @longDisplay %> </h2>
-<h2>Latitude <%= @latDisplay %> </h2>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Location>
+  <% for location in @allLocation%>
+   <item>
+    <Name><%= location.name %> </Name>
+    <Long><%= location.long %> </Long>
+    <Lat><%= location.lat %> </Lat>
+   </item>
+<% end %>
+</Location>
