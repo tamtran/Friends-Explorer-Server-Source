@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110510101606) do
+ActiveRecord::Schema.define(:version => 20110512084920) do
+
+  create_table "alerts", :force => true do |t|
+    t.string   "name"
+    t.string   "long"
+    t.string   "lat"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "type"
+  end
 
   create_table "current_users_locations", :force => true do |t|
     t.string   "name"
