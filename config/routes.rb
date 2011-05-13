@@ -1,6 +1,8 @@
 FriendsExplorerServerApp::Application.routes.draw do
   get "alert/receive"
 
+  get "alert/get"
+
   get "user_location/update"
 
   # The priority is based upon order of creation:
