@@ -9,6 +9,6 @@ class UserLocationController < ApplicationController
     @successOrNot = @recordChecking.save
 
     @allLocation = CurrentUsersLocation.find(:all, :conditions => ["name NOT IN (?)", [@nameDisplay]])
-    render :inline => "<% for location in @allLocation%><item><Name><%= location.name %></Name><Long><%= location.long %></Long><Lat><%= location.lat %></Lat></item><% end %>"
+    render :action => "update"
   end
 end

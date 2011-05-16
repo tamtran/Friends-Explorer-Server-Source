@@ -7,8 +7,8 @@ class AlertController < ApplicationController
     @alertRecord.save
   end
   def get
-    @alertSetRecords = Alert.find(:all, :conditions => ["name NOT IN (?)", [params[:name]]])    
-    render :inline => "<% for alertRecord in @alertSetRecords%><item><Type><%= alertRecord.alert_type %></Type><Long><%= alertRecord.long %></Long><Lat><%= alertRecord.lat %></Lat></item><% end %>"
+    @alertSetRecords = Alert.find(:all, :conditions => ["name NOT IN (?)", [params[:name]]])
+    render :action => "get"
   end
 
 end

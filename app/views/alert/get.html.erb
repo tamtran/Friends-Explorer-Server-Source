@@ -1,1 +1,10 @@
-<h1>Done</h1>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Location>
+<% for alertRecord in @alertSetRecords%>
+   <item>
+     <Type><%= alertRecord.alert_type %></Type>
+     <Long><%= alertRecord.long %></Long>
+     <Lat><%= alertRecord.lat %></Lat>
+   </item>
+<% end %>
+
